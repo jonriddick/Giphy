@@ -1,0 +1,20 @@
+body{
+	color: white;
+	/*background-color: black;*/
+	background-image: url("assets/images/nfl.jpg") repeat;
+    }
+
+button,
+div,
+form,
+input {
+  margin: 10px;
+}
+
+.jumbotron {
+	color: black;
+}
+
+#addBaller, #ballerInput, .baller {
+	color: black;
+}
