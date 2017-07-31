@@ -1,7 +1,9 @@
 body{
-	color: white;
-	/*background-color: black;*/
-	background-image: url("assets/images/nfl.jpg") repeat;
+	/*background-color: black;
+	background-image: url("https://s-media-cache-ak0.pinimg.com/736x/5e/e1/67/5ee167a8134526f933a123f56a3aab22--seahawks-game-nfl-football-games.jpg") repeat;*/
+    background-image: url("https://s-media-cache-ak0.pinimg.com/736x/5e/e1/67/5ee167a8134526f933a123f56a3aab22--seahawks-game-nfl-football-games.jpg");
+    color: black;
+
     }
 
 button,
@@ -10,11 +12,20 @@ form,
 input {
   margin: 10px;
 }
-
+/*
 .jumbotron {
 	color: black;
 }
 
 #addBaller, #ballerInput, .baller {
 	color: black;
+}
+*/
+#ballerForm {
+	background-color: #E0E0E0;
+	padding: 10px;
+}
+
+p {
+	color: red;
 }
