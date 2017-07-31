@@ -28,5 +28,6 @@ input {
 
 p {
 	color: red;
+	max-width: 300px;
 	background-color: ;
 }

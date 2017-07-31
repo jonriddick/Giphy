@@ -23,7 +23,7 @@ function renderButtons (){
         }
 }
 
-// This function handles events where one button is clicked
+// This function adds players to the array & creates buttons for them
       $("#addBaller").on("click", function(event) {
         // event.preventDefault() prevents the form from trying to submit itself.
         // We're using a form so that the user can hit enter instead of clicking the button if they want
@@ -42,7 +42,7 @@ function renderButtons (){
       renderButtons();
 
 //
-//Part 2
+//This code gets giphys for the players
 //
 
 $(document).on("click", ".baller", function() {
@@ -63,7 +63,8 @@ $(document).on("click", ".baller", function() {
         .done(function(response) {
           // Storing an array of results in the results variable
           var results = response.data;
-
+          //var gifDiv = $("<div class='item'>");
+          
           // Looping over every result item
           for (var i = 0; i < results.length; i++) {
 
@@ -71,7 +72,7 @@ $(document).on("click", ".baller", function() {
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
               // Creating a div with the class "item"
               var gifDiv = $("<div class='item'>");
-
+              
               // Storing the result item's rating
               var rating = results[i].rating;
 
@@ -79,16 +80,19 @@ $(document).on("click", ".baller", function() {
               var p = $("<p>").text("Rating: " + rating);
 
               // Creating an image tag
-              var personImage = $("<img>");
+              var playerImage = $("<img>");
 
               // Giving the image tag an src attribute of a proprty pulled off the
               // result item
-              personImage.attr("src", results[i].images.fixed_height.url);
-              personImage.addClass("pause");
+              playerImage.attr("src", results[i].images.downsized_still.url);
+              playerImage.attr("data-still", results[i].images.downsized_still.url)
+              playerImage.attr("data-animate", results[i].images.downsized.url)
+              playerImage.attr("data-state", "still")
+              playerImage.addClass("pause");
 
-              // Appending the paragraph and personImage we created to the "gifDiv" div we created
+              // Appending the paragraph and playerImage we created to the "gifDiv" div we created
               gifDiv.append(p);
-              gifDiv.append(personImage);
+              gifDiv.append(playerImage);
 
               // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
               $("#giphy").prepend(gifDiv);
